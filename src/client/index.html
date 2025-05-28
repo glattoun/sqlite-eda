@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SQLite EDA - Exploratory Data Analysis tool for SQLite databases with interactive visualizations">
+  <title>SQLite EDA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>SQLite EDA</h1>
+      <div class="database-info">
+        <span id="db-path"></span>
+      </div>
+      <div class="header-controls">
+        <label class="toggle-switch">
+          <input type="checkbox" id="auto-execute-toggle" checked>
+          <span class="slider"></span>
+          <span class="toggle-label">Auto-execute queries</span>
+        </label>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <div class="sidebar">
+        <div class="schema-explorer">
+          <h3>Database Schema</h3>
+          <p class="tip-text">Tip: Alt+Click on a table or column to analyze it</p>
+          <div id="schema-tree"></div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="query-panel">
+          <textarea id="query-input" placeholder="Enter SQL query..."></textarea>
+          <div class="query-controls">
+            <button id="run-query-btn">Run Query</button>
+            <span id="query-status" class="status"></span>
+          </div>
+          <div id="table-info-panel" class="table-info-panel"></div>
+        </div>
+
+        <div class="results-panel">
+          <div class="visualization-container">
+            <div id="table-view" class="vis-panel active"></div>
+            <div id="visualizations-grid" class="vis-panel">
+              <div id="bar-chart" class="chart-container"></div>
+              <div id="line-chart" class="chart-container"></div>
+              <div id="pie-chart" class="chart-container"></div>
+              <div id="histogram-chart" class="chart-container"></div>
+              <div id="scatter-chart" class="chart-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Data Explorer Panel -->
+    <div id="explore-panel" class="explore-panel">
+      <div id="profile-panel" class="profile-panel"></div>
+      <div id="recommendations-panel" class="recommendations-panel"></div>
+    </div>
+  </div>
+
+  <script src="js/query.js"></script>
+  <script src="js/visualizations/table-view.js"></script>
+  <script src="js/visualizations/bar-chart.js"></script>
+  <script src="js/visualizations/line-chart.js"></script>
+  <script src="js/visualizations/pie-chart.js"></script>
+  <script src="js/visualizations/histogram-chart.js"></script>
+  <script src="js/visualizations/scatter-chart.js"></script>
+  <script src="js/data-explorer.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

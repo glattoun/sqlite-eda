@@ -1,0 +1,31 @@
+{
+    "name": "sqlite-eda",
+    "version": "0.1.0",
+    "description": "SQLite Exploratory Data Analysis tool with interactive visualizations",
+    "main": "src/server.js",
+    "bin": {
+        "sqlite-eda": "bin/sqlite-eda.js"
+    },
+    "scripts": {
+        "start": "node src/server.js"
+    },
+    "dependencies": {
+        "better-sqlite3": "^8.7.0",
+        "commander": "^11.1.0",
+        "d3": "^7.8.5",
+        "express": "^4.21.2",
+        "portfinder": "^1.0.37",
+        "socket.io": "^4.8.1"
+    },
+    "keywords": [
+        "sqlite",
+        "eda",
+        "exploratory-data-analysis",
+        "visualization",
+        "d3",
+        "database"
+    ],
+    "author": "",
+    "license": "MIT",
+    "type": "commonjs"
+}
