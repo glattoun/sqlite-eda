@@ -18,7 +18,7 @@ bash# Analyze any SQLite database
 sqlite-eda your-database.sqlite
 
 # The tool will automatically open your browser to the analysis interface
-# Default: http://localhost:3000
+# Default: http://localhost:3000 . Resolves all port conflicts dynamically.
 Usage Examples
 bash# Basic usage
 sqlite-eda data.db
